@@ -22,7 +22,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Manrope", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.9), transparent 32%),
     linear-gradient(180deg, #f7f5f0 0%, var(--bg) 32%, #f9f7f3 100%);
@@ -205,6 +205,11 @@ h3 {
   position: fixed;
   inset: 0;
   z-index: 2;
+  pointer-events: none;
+}
+
+body.menu-open .mobile-menu-backdrop {
+  pointer-events: auto;
 }
 
 .section {
@@ -225,9 +230,9 @@ h3 {
 .section-kicker {
   margin-bottom: 1rem;
   color: var(--muted);
-  font-family: "Manrope", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.9rem;
+  font-weight: 600;
   letter-spacing: 0.04em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -235,7 +240,7 @@ h3 {
 
 .section h2 {
   margin-bottom: 1.1rem;
-  font-family: "Manrope", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -275,7 +280,6 @@ h3 {
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--muted);
-  padding-top: 10px;
 }
 
 .event {
@@ -495,8 +499,8 @@ h3 {
     right: 28px;
   }
 
-  .mobile-menu-backdrop {
-    display: block;
+  .time {
+    padding-top: 10px;
   }
 }
 
