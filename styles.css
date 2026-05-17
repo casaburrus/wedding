@@ -205,7 +205,6 @@ h3 {
   position: fixed;
   inset: 0;
   z-index: 2;
-  background: rgba(28, 24, 20, 0.18);
 }
 
 .section {
@@ -438,9 +437,7 @@ h3 {
   }
 
   .hero-media::after {
-    background:
-      linear-gradient(90deg, rgba(26, 22, 18, 0.08), transparent 38%),
-      linear-gradient(to top, rgba(26, 22, 18, 0.12), transparent 34%);
+    background: none;
   }
 
   .hero-media img {
@@ -468,6 +465,10 @@ h3 {
     text-shadow: none;
   }
 
+  .menu-toggle span {
+    background: rgba(29, 26, 22, 0.92);
+  }
+
   .eyebrow {
     font-size: clamp(1.9rem, 2.5vw, 2.7rem);
     max-width: none;
@@ -480,21 +481,22 @@ h3 {
   }
 
   .desktop-nav {
+    display: none;
+  }
+
+  .menu-toggle {
     top: 34px;
     right: 36px;
-    display: flex;
-    gap: 18px;
+    display: inline-flex;
   }
 
-  .desktop-nav a {
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
+  .mobile-menu {
+    top: 82px;
+    right: 28px;
   }
 
-  .menu-toggle,
-  .mobile-menu,
   .mobile-menu-backdrop {
-    display: none;
+    display: block;
   }
 }
 
