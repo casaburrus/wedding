@@ -8,6 +8,7 @@
   --shadow: 0 24px 60px rgba(29, 26, 22, 0.08);
   --hero-radius: 30px;
   --content-width: 760px;
+  --safe-top: env(safe-area-inset-top, 0px);
 }
 
 *,
@@ -61,7 +62,7 @@ h3 {
 
 .hero {
   position: relative;
-  min-height: 80svh;
+  min-height: 100svh;
   padding: 0;
 }
 
@@ -70,7 +71,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80svh;
+  height: 100svh;
   overflow: hidden;
   background: #1b1815;
 }
@@ -100,7 +101,7 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 16px 16px 5.5rem;
+  padding: calc(16px + var(--safe-top)) 16px 5.5rem;
   color: #f6f3ec;
   text-align: center;
   pointer-events: none;
@@ -132,7 +133,7 @@ h3 {
 }
 
 .menu-toggle {
-  top: 34px;
+  top: calc(34px + var(--safe-top));
   right: 28px;
   display: inline-flex;
   flex-direction: column;
@@ -151,6 +152,15 @@ h3 {
   margin-left: auto;
   background: rgba(255, 248, 241, 0.95);
   transition: transform 180ms ease, opacity 180ms ease;
+}
+
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 599px) {
+    html,
+    body {
+      background: #000;
+    }
+  }
 }
 
 .menu-toggle.is-open span:nth-child(1) {
